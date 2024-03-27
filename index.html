@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xLaPFP</title>
+    <style>
+        body {
+            background-color: black;
+            color: blueviolet;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>xLaPFP byJean</h1>
+        Color: <input type="color" id="color" /><br><br>
+        Type: <select name="type" id="type">
+            <option value="none">none</option> 
+            <option value="norway">norway</option>
+            <option value="winter">winter</option>
+            <option value="christmas">christmas</option>
+            <option value="easter">easter</option>
+            <option value="spring">spring</option>
+            <option value="april">april</option>
+            <option value="halloween">halloween</option>
+        </select><br><br>
+        <button onclick="go()">Go</button><br>
+        <pre>-----------------------------------------------------------------------------------------</pre>
+        <img id="img" src="https://api.alexflipnote.dev/nft/00026B/spring">
+    </center>
+    <script>
+        function go() {
+            var color = document.getElementById("color").value.replace("#", "");
+            var type = document.getElementById("type").value;
+            document.getElementById("img").src = `https://api.alexflipnote.dev/nft/${color}/${type}`; 
+        }
+    </script>
+</body>
+</html>
